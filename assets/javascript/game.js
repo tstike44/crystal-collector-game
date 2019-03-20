@@ -50,12 +50,13 @@ $('#score').html('score: ' + score)
 $('#gem1').click(function () {
     console.log('gem1: ' + gem1);
     var newScore = score+= gem1;
+    //displaying the random # in the console
     console.log('New Score: ' + newScore)
-    $('#score').html('score: ' + newScore)
+    $('#score').html(newScore)
 
     if (newScore === randomNumber) {
         wins++;
-        $('#wins').html('wins: ' + wins)
+        $('#wins').html('wins: ' + wins);
         reset();
        } else if (newScore > randomNumber){
            losses++;
@@ -67,12 +68,13 @@ $('#gem1').click(function () {
     
  $('#gem2').click(function () {
     var newScore = score+= gem2;
+    //displaying the random # in the console
     console.log('gem2: ' + gem2);
-    $('#score').html('score: ' + newScore)
+    $('#score').html(newScore)
 
     if (newScore === randomNumber) {
         wins++;
-        $('#wins').html('wins: ' + wins)
+        $('#wins').html('wins: ' + wins);
         reset();
        } else if (newScore > randomNumber){
            losses++;
@@ -85,12 +87,13 @@ $('#gem1').click(function () {
 
 $('#gem3').click(function () {
     var newScore = score+= gem3;
+    //displaying the random # in the console
     console.log('gem3: ' + gem3);
-    $('#score').html('score: ' + newScore)
+    $('#score').html(newScore)
     
     if (newScore === randomNumber) {
         wins++;
-        $('#wins').html('wins: ' + wins)
+        $('#wins').html('wins: ' + wins);
         reset();
        } else if (newScore > randomNumber){
            losses++;
@@ -103,12 +106,13 @@ $('#gem3').click(function () {
 
 $('#gem4').click(function () {
     var newScore = score+= gem4;
+    //displaying the random # in the console
     console.log('gem4: ' + gem4);
-    $('#score').html('score: ' + newScore)
+    $('#score').html(newScore)
     
     if (newScore === randomNumber) {
         wins++;
-        $('#wins').html('wins: ' + wins)
+        $('#wins').html('wins: ' + wins);
         reset();
        } else if (newScore > randomNumber){
            losses++;
@@ -117,7 +121,6 @@ $('#gem4').click(function () {
        }
    
 })
-
 
 
  $('#randomNum').text(randomNumber);
