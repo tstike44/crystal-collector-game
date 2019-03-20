@@ -28,16 +28,16 @@ $(document).ready(function() {
     
 function reset() {
     
-var randomNumber = Math.floor(Math.random()*120) + 19;
+randomNumber = Math.floor(Math.random()*120) + 19;
 $('#randomNum').html(randomNumber);
 
 
 score = 0;
 
-var gem1 = Math.floor(Math.random()*12) + 1;
-var gem2 = Math.floor(Math.random()*12) + 1;
-var gem3 = Math.floor(Math.random()*12) + 1;
-var gem4 = Math.floor(Math.random()*12) + 1;
+ gem1 = Math.floor(Math.random()*12) + 1;
+ gem2 = Math.floor(Math.random()*12) + 1;
+ gem3 = Math.floor(Math.random()*12) + 1;
+ gem4 = Math.floor(Math.random()*12) + 1;
 $('#score').html('score: ' + score)
 
 
@@ -54,11 +54,11 @@ $('#gem1').click(function () {
     $('#score').html('score: ' + newScore)
 
     if (newScore === randomNumber) {
-        wins += 1;
+        wins++;
         $('#wins').html('wins: ' + wins)
         reset();
        } else if (newScore > randomNumber){
-           losses += 1;
+           losses++;
            $('#loss').html('losses: ' + losses);
            reset();
        }
