@@ -1,7 +1,11 @@
 
 
+body {
+    background-image: url(../images/blackground.png)
+}
 .container {
     font-weight: bolder;
+    color: white
 }
 
 .img-fluid {
@@ -10,10 +14,15 @@
 }
 
 #randomNum {
-	color: blueviolet;
+	color: #f8c;
 }
 
 button {
 	background-color: white;
 
+}
+#snail {
+    position:fixed;
+    bottom:0px;
+    left:94%;
 }

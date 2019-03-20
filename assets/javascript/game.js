@@ -20,40 +20,107 @@ var score = 0;
 var gem1 = Math.floor(Math.random()*12) + 1;
 var gem2 = Math.floor(Math.random()*12) + 1;
 var gem3 = Math.floor(Math.random()*12) + 1;
-var gem4 = Math.floor(Math.random()*12) + 1;
-var randomGem = Math.floor(Math.random()*12) + 1;
+var gem4 = Math.floor(Math.random()*12) + 1; 
 var randomNumber = Math.floor(Math.random()*120) + 19;
 
-$(document).ready(function reset() {
-    //buttons work
-    $('#gem1').click(function () {
 
-        console.log(gem1);
-        return gem1;
-    })
+$(document).ready(function() {
+    
+function reset() {
+    
+var randomNumber = Math.floor(Math.random()*120) + 19;
+$('#randomNum').html(randomNumber);
 
-     $('#gem2').click(function () {
-        console.log(gem2);
-        return gem2;
-    })
-    $('#gem3').click(function () {
-        console.log(gem3);
-        return gem3;
-    })
-    $('#gem4').click(function () {
-        console.log(gem4);
-        return gem4;
 
-    })
+score = 0;
 
- //adding numbers together
-      
+var gem1 = Math.floor(Math.random()*12) + 1;
+var gem2 = Math.floor(Math.random()*12) + 1;
+var gem3 = Math.floor(Math.random()*12) + 1;
+var gem4 = Math.floor(Math.random()*12) + 1;
+$('#score').html('score: ' + score)
 
-  
-  
-  
-  //note, you must ensure event handlers are unbound:
-  $('#reset').unbind('click').bind('click',reset);//<-- call main callback
-});
 
-$('#randomNum').text(randomNumber);
+} //end of reset
+
+
+//not generating new number on reset
+//not adding wins/losses
+//
+$('#gem1').click(function () {
+    console.log('gem1: ' + gem1);
+    var newScore = score+= gem1;
+    console.log('New Score: ' + newScore)
+    $('#score').html('score: ' + newScore)
+
+    if (newScore === randomNumber) {
+        wins += 1;
+        $('#wins').html('wins: ' + wins)
+        reset();
+       } else if (newScore > randomNumber){
+           losses += 1;
+           $('#loss').html('losses: ' + losses);
+           reset();
+       }
+}) 
+    
+    
+ $('#gem2').click(function () {
+    var newScore = score+= gem2;
+    console.log('gem2: ' + gem2);
+    $('#score').html('score: ' + newScore)
+
+    if (newScore === randomNumber) {
+        wins++;
+        $('#wins').html('wins: ' + wins)
+        reset();
+       } else if (newScore > randomNumber){
+           losses++;
+           $('#loss').html('losses: ' + losses);
+           reset();
+       }
+
+   
+})
+
+$('#gem3').click(function () {
+    var newScore = score+= gem3;
+    console.log('gem3: ' + gem3);
+    $('#score').html('score: ' + newScore)
+    
+    if (newScore === randomNumber) {
+        wins++;
+        $('#wins').html('wins: ' + wins)
+        reset();
+       } else if (newScore > randomNumber){
+           losses++;
+           $('#loss').html('losses: ' + losses);
+           reset();
+       }
+
+    
+})
+
+$('#gem4').click(function () {
+    var newScore = score+= gem4;
+    console.log('gem4: ' + gem4);
+    $('#score').html('score: ' + newScore)
+    
+    if (newScore === randomNumber) {
+        wins++;
+        $('#wins').html('wins: ' + wins)
+        reset();
+       } else if (newScore > randomNumber){
+           losses++;
+           $('#loss').html('losses: ' + losses);
+           reset();
+       }
+   
+})
+
+
+
+ $('#randomNum').text(randomNumber);
+
+}); //end of everything
+
