@@ -1,0 +1,28 @@
+
+
+body {
+    background-image: url(../images/blackground.png)
+}
+.container {
+    font-weight: bolder;
+    color: white
+}
+
+.img-fluid {
+    height: 100px;
+    width: 100px;
+}
+
+#randomNum {
+	color: #f8c;
+}
+
+button {
+	background-color: white;
+
+}
+#snail {
+    position:fixed;
+    bottom:0px;
+    left:90%;
+}
