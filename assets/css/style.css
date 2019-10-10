@@ -3,9 +3,16 @@
 body {
     background-image: url(../images/blackground.png)
 }
+button {
+	background-color: white;
+
+}
 .container {
     font-weight: bolder;
     color: white
+}
+#header {
+    justify-content: center;
 }
 
 .img-fluid {
@@ -17,10 +24,6 @@ body {
 	color: #f8c;
 }
 
-button {
-	background-color: white;
-
-}
 #snail {
     position:fixed;
     bottom:0px;

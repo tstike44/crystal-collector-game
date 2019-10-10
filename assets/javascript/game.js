@@ -126,6 +126,7 @@ $(document).ready(function () {
 	})
 
 	$('#randomNum').text(randomNumber);
-	console.log("wins " + wins)
-	console.log("losses " + losses)
+	//checking to see if the wins/loss is being added correctly in the console
+	console.log("wins: " + wins)
+	console.log("losses: " + losses)
 }); 
