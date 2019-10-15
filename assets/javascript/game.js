@@ -15,6 +15,7 @@
 
 //globals
 var wins = 0;
+//losses aren't adding  
 var losses = 0;
 var score = 0;
 var gem1 = Math.floor(Math.random() * 12) + 1;
@@ -23,7 +24,9 @@ var gem3 = Math.floor(Math.random() * 12) + 1;
 var gem4 = Math.floor(Math.random() * 12) + 1;
 var randomNumber = $("#randomNum");
 randomNumber = Math.floor(Math.random() * 120) + 19;
-
+//displaying wins on screen
+$('#wins').html('wins: ' + wins);
+$('#loss').html('losses: ' + losses);
 
 $(document).ready(function () {
 	//function to reset the scores
@@ -40,10 +43,9 @@ $(document).ready(function () {
 		$('#score').html(score)
 	}
 
-
 	//not generating new number on reset
-	//not adding wins/losses
-	//
+	
+
 	$('#gem1').click(function () {
 		console.log('gem1: ' + gem1);
 		var totalScore = score += gem1;
@@ -57,8 +59,12 @@ $(document).ready(function () {
 			wins++;
 			$('#wins').html('wins: ' + wins);
 			reset();
-		} else if (totalScore > randomNumber) {
+		} 
+		
+		if (totalScore > randomNumber) {
 			losses += losses;
+			console.log("losses: " + losses)
+
 			$('#loss').html('losses: ' + losses);
 			reset();
 		}
@@ -78,8 +84,12 @@ $(document).ready(function () {
 			wins++;
 			$('#wins').html('wins: ' + wins);
 			reset();
-		} else if (totalScore > randomNumber) {
+		} 
+		
+		if (totalScore > randomNumber) {
 			losses += losses;
+			console.log("losses: " + losses)
+
 			$('#loss').html('losses: ' + losses);
 			reset();
 		}
@@ -98,8 +108,12 @@ $(document).ready(function () {
 			wins += wins;
 			$('#wins').html('wins: ' + wins);
 			reset();
-		} else if (totalScore > randomNumber) {
+		} 
+		
+		if (totalScore > randomNumber) {
 			losses += losses;
+			console.log("losses: " + losses)
+
 			$('#loss').html('losses: ' + losses);
 			reset();
 		}
@@ -118,15 +132,19 @@ $(document).ready(function () {
 			wins += wins;
 			$('#wins').html('wins: ' + wins);
 			reset();
-		} else if (totalScore > randomNumber) {
+		} 
+		
+		if (totalScore > randomNumber) {
 			losses += losses;
 			$('#loss').html('losses: ' + losses);
+
+			console.log("losses: " + losses)
 			reset();
 		}
 	})
 
 	$('#randomNum').text(randomNumber);
 	//checking to see if the wins/loss is being added correctly in the console
-	console.log("wins: " + wins)
-	console.log("losses: " + losses)
+	// console.log("wins: " + wins)
+	// console.log("losses: " + losses)
 }); 
